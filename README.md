@@ -131,3 +131,39 @@ void imprimirvetor(int *px, int qtd){
 }
 ```
 
+## Questão 05
+Escreva um programa que encontre o tamanho de uma string fornecida. Utilize ponteiros.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MX 50
+int length(char *);
+
+int main(void) {
+  char str[MX];  
+  int tamanho;
+  puts("Digite um string:");
+  fgets(str, MX, stdin);
+  str[strcspn(str, "\n")] = 0; 
+  
+  tamanho = length(str);
+  printf("A string \"%s\" tem %d caracteres", str, tamanho);
+
+  return 0;
+}
+
+int length(char *s) {
+  int len = 0;
+  while(*s){
+    len++;
+    s++;
+  }
+  return len;
+}
+```
+
+## Questão 06
+Escreva um programa que copie uma string para outra usando ponteiros.
