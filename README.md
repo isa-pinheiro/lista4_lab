@@ -167,3 +167,28 @@ int length(char *s) {
 
 ## Questão 06
 Escreva um programa que copie uma string para outra usando ponteiros.
+```c
+#include <stdio.h>
+#define MX 50
+
+void copia(char *, char *);
+int main(void) {
+  char s1[MX] = "por favor funciona";
+  char s2[MX];
+
+  copia(s1, s2);
+
+  printf("%s", s2);
+  return 0;
+}
+
+void copia(char *string1, char *string2){
+  for(int i = 0; ; i++){
+    *(string2 + i) = *(string1 + i);
+    if(*(string1 + i) == '\0'){
+      *(string2 + i) = *(string1 + i);
+      break;
+    }
+  }
+}
+```
