@@ -224,3 +224,33 @@ int main(void) {
   return 0;
 }
 ```
+
+## Questão 08
+Escreva um programa que busque um caracter fornecido em uma string utilizando ponteiros.
+
+```c
+#include <stdio.h>
+#include <string.h>
+#define MAX 50
+int main(void) {
+  char str1[MAX], carac;
+  int count = 0;
+
+  puts("Insira uma string: ");
+  fgets(str1, MAX, stdin);
+  str1[strcspn(str1, "\n")] = 0;
+
+  puts("Insira um caractere: ");
+  carac = getchar();
+
+  for(int i = 0; i < strlen(str1) ; i++){
+    if(*(str1 + i) == carac){
+      printf("O caractere está na posição: %d\n", i);
+      count++;
+    }
+  }
+
+  printf("Na string \"%s\" o caractere \'%c\' aparece %d vezes", str1, carac, count);
+  return 0;
+}
+```
