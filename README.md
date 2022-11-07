@@ -167,6 +167,7 @@ int length(char *s) {
 
 ## Questão 06
 Escreva um programa que copie uma string para outra usando ponteiros.
+
 ```c
 #include <stdio.h>
 #define MX 50
@@ -190,5 +191,36 @@ void copia(char *string1, char *string2){
       break;
     }
   }
+}
+
+```
+
+
+## Questão 07 
+Escreva um programa que concatene duas strings utilizando ponteiros.
+
+```c
+#include <stdio.h>
+#include <string.h>
+#define MAX 50
+
+void concatena(char *, char *);
+
+int main(void) {
+  char str1[MAX], str2[MAX];
+
+  puts("Insira a primeira string: ");
+  fgets(str1, MAX, stdin);
+  str1[strcspn(str1, "\n")] = 0;
+  
+  puts("Insira a segunda string: ");
+  fgets(str2, MAX, stdin);
+  str2[strcspn(str2, "\n")] = 0;
+  
+  strcat(str1, str2); //funçao para concatenar, a segunda é adicionada ao lado da 1
+
+  printf("Strings concatenadas: %s", str1);
+    
+  return 0;
 }
 ```
