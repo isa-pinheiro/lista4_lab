@@ -254,3 +254,10 @@ int main(void) {
   return 0;
 }
 ```
+
+## Questão 09
+Implemente o método de ordenação bolha utilizando ponteiros.
+
+```c
+
+```
